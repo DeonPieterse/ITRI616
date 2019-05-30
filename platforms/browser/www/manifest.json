@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Perception",
+  "short_name": "Perception",
+  "version": "com.itri616.perception",
+  "description": "ITRI616 client interface.",
+  "author": "Zelmarie and Gideon",
+  "icons": [],
+  "start_url": "index.html"
+}
