@@ -71,15 +71,6 @@ function capturePhoto() {
 
 // A button will call this function
 //
-function capturePhotoEdit() {
-    console.log("working");
-    // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-    destinationType: destinationType.DATA_URL });
-}
-
-// A button will call this function
-//
 function getPhoto(source) {
     // Retrieve image file location from specified source
     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 

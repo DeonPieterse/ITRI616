@@ -1,25 +1,37 @@
 <html>
 <head>
-    <title>Capture Photo</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Perception</title>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/Camera/CameraFunctionality.js"></script>
+    <script type="text/javascript" src="js/api/api.js"></script>
   </head>
-  
   
   <body>
     <div class="row">
       <button onclick="capturePhoto();">Capture Photo</button> <br>
+
+      <input id="firstOct" type="number" name="quantity" min="0" max="255" step="1" value="0" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+
+      <label for="">.</label>
+
+      <input id="secondOct" type="number" name="quantity" min="0" max="255" step="1" value="0" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+
+      <label for="">.</label>
+
+      <input id="thirdOct" type="number" name="quantity" min="0" max="255" step="1" value="0" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+
+      <label for="">.</label>
+
+      <input id="fourthOct" type="number" name="quantity" min="0" max="255" step="1" value="0" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+
+      <br>
+
       <button onclick="sendImageToAPI();">Send Image</button> <br>
-      <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-      <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
     </div>
     <img style="display:none;" id="largeImage" src="" />
     <img style="display:none;" id="smallImage" src="" />
   </body>
-
 
   <footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
