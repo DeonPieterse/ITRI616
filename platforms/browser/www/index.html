@@ -5,18 +5,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/CameraFunctionality.js"></script>
+    <script type="text/javascript" src="js/Camera/CameraFunctionality.js"></script>
   </head>
   
   
   <body>
-    <button onclick="capturePhoto();">Capture Photo</button> <br>
-    <button onclick="stuff();">Stuff</button> <br>
-    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
-
-    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+    <div class="row">
+      <button onclick="capturePhoto();">Capture Photo</button> <br>
+      <button onclick="stuff();">Send Image</button> <br>
+      <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+      <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+    </div>
     <img style="display:none;" id="largeImage" src="" />
+    <img style="display:none;" id="smallImage" src="" />
   </body>
 
 
