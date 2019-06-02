@@ -33,7 +33,7 @@ function onPhotoDataSuccess(imageData) {
 
     var json = document.getElementById('json'); 
 
-    json.value = 'data:image/base64' + imageData;
+    json.innerHTML = imageData;
 }
 
 // Called when a photo is successfully retrieved

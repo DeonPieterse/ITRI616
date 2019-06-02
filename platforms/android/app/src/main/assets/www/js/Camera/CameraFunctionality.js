@@ -30,6 +30,10 @@ function onPhotoDataSuccess(imageData) {
     // The inline CSS rules are used to resize the image
     //
     smallImage.src = "data:image/jpeg;base64," + imageData;
+
+    var json = document.getElementById('json'); 
+
+    json.innerHTML = "data:image/jpeg;base64," + imageData;
 }
 
 // Called when a photo is successfully retrieved
@@ -55,27 +59,20 @@ function onPhotoURISuccess(imageURI) {
 // A button will call this function
 //
 function capturePhoto() {
-    // Take picture using device camera and retrieve image as base64-encoded string
+    console.log('Capturing image!');
+    //Take picture using device camera and retrieve image as base64-encoded string
     navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
     destinationType: destinationType.DATA_URL });
 
     permissions.hasPermission(permissions.CAMERA, function( status ){
     if ( status.hasPermission ) {
-        console.log("Yes :D ");
+        console.log("Obtained Permission!");
     }
     else {
-        console.warn("No :( ");
+        console.warn("Denied Permission!");
     }
-    });
-}
 
-// A button will call this function
-//
-function capturePhotoEdit() {
-    console.log("working");
-    // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-    destinationType: destinationType.DATA_URL });
+    });
 }
 
 // A button will call this function
