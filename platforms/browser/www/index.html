@@ -2,33 +2,41 @@
 <head>
     <title>Perception</title>
 
+    <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/Camera/CameraFunctionality.js"></script>
     <script type="text/javascript" src="js/api/api.js"></script>
   </head>
   
   <body>
-    <div class="row">
-      <button onclick="capturePhoto();">Capture Photo</button> <br>
+    <div class="center-with-color">
 
-      <input id="firstOct" type="number" name="quantity" min="0" max="255" step="1" value="0" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+      <button onclick="capturePhoto();" class="btn btn--stripe btn--radius">Capture Photo</button> <br>
 
-      <label for="">.</label>
-
-      <input id="secondOct" type="number" name="quantity" min="0" max="255" step="1" value="0" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+      <input id="firstOct" type="number" name="firstOct" min="0" max="255" step="1" value="0">
 
       <label for="">.</label>
 
-      <input id="thirdOct" type="number" name="quantity" min="0" max="255" step="1" value="0" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+      <input id="secondOct" type="number" name="secondOct" min="0" max="255" step="1" value="0">
 
       <label for="">.</label>
 
-      <input id="fourthOct" type="number" name="quantity" min="0" max="255" step="1" value="0" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+      <input id="thirdOct" type="number" name="thirdOct" min="0" max="255" step="1" value="0">
+
+      <label for="">.</label>
+
+      <input id="fourthOct" type="number" name="fourthOct" min="0" max="255" step="1" value="0">
+
+      <label for="">:</label>
+
+      <input id="port" type="number" name="port" min="0" max="65535" step="1" value="0">
 
       <br>
 
-      <button onclick="sendImageToAPI();">Send Image</button> <br>
+      <button onclick="sendImageToAPI();" class="btn btn--stripe btn--radius">Send Image</button> <br>
     </div>
+    <br>
+    <label for="" id="json">JSON value that will be used</label>
     <img style="display:none;" id="largeImage" src="" />
     <img style="display:none;" id="smallImage" src="" />
   </body>
