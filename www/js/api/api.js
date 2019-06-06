@@ -5,14 +5,31 @@ function sendImageToAPI(){
     ip += document.getElementById('fourthOct').value + ':';
     ip += document.getElementById('port').value;
 
-    var image = document.getElementById('json').innerHTML;
+    var request = ip + "/image/";
+    console.log(request);
 
-    var request = ip + '/image/' + image;
+    var image = document.getElementById("fileInput").files[0];
+    console.log(image);
 
+    var formData = new FormData();
+
+    //HTML file input, chosen by user or taken by camera
+    formData.append("image", image, "image.jpg");
+    console.log(formData.get("image"));
+
+
+    //This code sends via AJAX the image through a formData Post Request to the server.
+    //
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", request, false ); // false for synchronous request
-    xmlHttp.send( null );
-    document.getElementById('json').innerHTML =  xmlHttp.responseText;
 
-    console.log(ip + '/image/' + image);
+    xmlHttp.onload = function() {
+        var serverResponse = document.getElementById('json');
+        serverResponse.innerHTML = this.responseText;
+    };
+
+    xmlHttp.open( "POST", request, false ); // false for synchronous request
+    xmlHttp.setRequestHeader("Content-type", 'multipart/form-data');
+    xmlHttp.send(formData);
+    console.log(ip);
+
 }
