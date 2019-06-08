@@ -47,7 +47,7 @@ function onPhotoURISuccess(imageURI) {
 
     // Get image handle
     //
-    var largeImage = document.getElementById('largeImage');
+    var largeImage = document.getElementById('smallImage');
 
     // Unhide image elements
     //

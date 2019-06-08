@@ -18,6 +18,9 @@
     },
     "com.jjdltc.cordova.plugin.sftp": {
       "PACKAGE_NAME": "com.itri616.perception"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.itri616.perception"
     }
   },
   "dependent_plugins": {}

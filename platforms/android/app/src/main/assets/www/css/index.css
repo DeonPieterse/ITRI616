@@ -1,53 +1,17 @@
-html, body{
-  height: 100%;
+
+:required {
+  border-color: red;
 }
 
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  background-color: rgb(255, 255, 255); 
-  margin: 0;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-a, button{
-  background-color: #55f7b9;
-  border-radius: 15px;
-  border: 0;
-  width: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+:valid {
+  border-color: rgb(34, 130, 255);
 }
 
-  box-sizing::after border-box{
-  margin: 0.5rem auto;
-  padding: 0.75rem;
-    
-  font-size: 1rem;
-  text-align: center;
-  text-transform: uppercase;
-  color: white;
-    
-  border: none;
-  background: #99154e;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.25rem darken(#99154e, 10%);
-    
-  outline: none;
-  user-select: none;
-  cursor: pointer;
+ons-input :valid {
+  border-color: rgb(34, 130, 255);
 }
 
-input{
-    width: 240px;
-  }
-    
-/*
-  &:active{
-    transform: translateY(0.125rem);
-    box-shadow: 0 0.125rem darken(#99154e, 10%);
+
+ons-input :invalid {
+  border-color: yellow;
 }

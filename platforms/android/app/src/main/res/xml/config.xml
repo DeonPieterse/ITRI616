@@ -13,6 +13,11 @@
     <feature name="JJsftp">
         <param name="android-package" value="com.jjdltc.cordova.plugin.sftp.JJsftp" />
     </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
     <name>Perception</name>
     <description>
         ITRI616 client interface.

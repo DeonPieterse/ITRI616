@@ -30,7 +30,10 @@ function onPhotoDataSuccess(imageData) {
     // The inline CSS rules are used to resize the image
     //
     smallImage.src = "data:image/jpeg;base64," + imageData;
-
+    
+    //Sets captured foto inside file uploader component.
+    fileInput.src = "data:image/jpeg;" + imageData;
+    
     var json = document.getElementById('json'); 
 
     json.innerHTML = imageData;
@@ -44,7 +47,7 @@ function onPhotoURISuccess(imageURI) {
 
     // Get image handle
     //
-    var largeImage = document.getElementById('largeImage');
+    var largeImage = document.getElementById('smallImage');
 
     // Unhide image elements
     //

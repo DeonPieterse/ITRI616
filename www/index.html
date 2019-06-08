@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="css/index.css">
 
+  <script type="text/javascript" src="js/functionality/autoIP.js"></script>
   <script type="text/javascript" src="js/Camera/CameraFunctionality.js"></script>
   <script type="text/javascript" src="js/api/api.js"></script>
 </head>
@@ -18,7 +19,7 @@
   <br>
 
   <div class="toolbar--material">
-    <div class="toolbar__center">IP</div>
+    <div class="toolbar__center" onclick="homeIP();">IP</div>
   </div>
 
   <ons-row>
@@ -48,7 +49,15 @@
   <br>
   <form id="apiForm" name="apiForm" action="" >
   <br>
-   <input id="fileInput" name="fileInput" type="file" style="padding-left: 25%;" required/>
+  <input id="fileInput" name="image" type="file" style="padding-left: 25%;" src="" required/>
+  <br>
+  <br>
+  <ons-button onclick="getPhoto(pictureSource.PHOTOLIBRARY)" class="button button--material" style="left: 25%; width: 45%;">Library Image
+  </ons-button> 
+  <br>
+  <br>
+  <ons-button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM)" class="button button--material" style="left: 25%; width: 45%;">Album Image
+  </ons-button> 
   <br>
   <br>
   <ons-button onclick="sendImageToAPI();" class="button button--material" style="left: 25%; width: 45%;">Send Image
