@@ -64,7 +64,7 @@ function sendImageToAPI(){
 
     var sendImage = json;
 
-    var compressedImage = LZUTF8.compress('sendImage');
+    var compressedImage = LZUTF8.compress(sendImage);
     console.log(compressedImage);   
     
     var ip = document.getElementById('firstOct').value + '.';
