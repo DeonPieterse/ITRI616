@@ -16,7 +16,7 @@ function onDeviceReady() {
 //
 function onPhotoDataSuccess(imageData) {
     // Uncomment to view the base64 encoded image data
-    // console.log(imageData);
+    console.log(imageData);
 
     // Get image handle
     //

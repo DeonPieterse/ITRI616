@@ -1,3 +1,14 @@
+function getPhoto(source) {
+    // Retrieve image file location from specified source
+    navigator.camera.getPicture(this.onPhotoURISuccess, onFail, { quality: 50, 
+    destinationType: destinationType.FILE_URI,
+    sourceType: source });
+}
+
+function onPhotoURISuccess(imageURI) {
+    console.log(imageURI);
+}
+
 function sendImageToAPI(){
     var ip = document.getElementById('firstOct').value + '.';
     ip += document.getElementById('secondOct').value + '.';
@@ -8,11 +19,13 @@ function sendImageToAPI(){
     var request = "http://" + ip + "/image";
     console.log(request);
 
-    var image = document.getElementById("fileInput").files[0];
-    //console.log(image);
-
-    var fileInput = document.getElementById('fileInput');
+    var image = document.getElementById("fileInput").src;
     console.log(image);
+
+    this.getPhoto(image);
+
+    // var fileInput = document.getElementById('fileInput');
+    // console.log(image);
 
 
 
@@ -20,19 +33,19 @@ function sendImageToAPI(){
     // This code sends a GET request via AJAX to API containing the URI of the image that is either
     // captured or uploaded
     //
-    var xmlHttp = new XMLHttpRequest();
+    // var xmlHttp = new XMLHttpRequest();
 
-    xmlHttp.onload = function() {
-        var serverResponse = document.getElementById('json');
-        serverResponse.innerHTML = this.responseText;
-    };
+    // xmlHttp.onload = function() {
+    //     var serverResponse = document.getElementById('json');
+    //     serverResponse.innerHTML = this.responseText;
+    // };
 
-    xmlHttp.open( "GET", request, false ); // false for synchronous request
-    xmlHttp.setRequestHeader("Content-Type", 'multipart/form-data');
+    // xmlHttp.open( "GET", request, false ); // false for synchronous request
+    // xmlHttp.setRequestHeader("Content-Type", 'multipart/form-data');
 
-    console.log(fileInput);
+    // console.log(fileInput);
 
-    xmlHttp.send(fileInput);
-    console.log(ip);
+    // xmlHttp.send(fileInput);
+    // console.log(ip);
 
 }
