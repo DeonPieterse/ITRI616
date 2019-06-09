@@ -63,16 +63,19 @@ function sendImageToAPI(){
 
     var sendImage = json;
 
+    var compressedImage = LZString.compress(sendImage);
+    console.log(compressedImage);
+
     var ip = document.getElementById('firstOct').value + '.';
     ip += document.getElementById('secondOct').value + '.';
     ip += document.getElementById('thirdOct').value + '.';
     ip += document.getElementById('fourthOct').value + ':';
     ip += document.getElementById('port').value;
 
-    var request = "http://" + ip + "/image/" + sendImage;
+    var request = "http://" + ip + "/image/" + compressedImage;
     console.log(request);
 
-    console.log(sendImage);
+    console.log(compressedImage);
 
     // This code sends a GET request via AJAX to API containing the URI of the image that is either
     // captured or uploaded
