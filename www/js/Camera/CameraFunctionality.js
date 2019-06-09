@@ -22,11 +22,11 @@ function onPhotoDataSuccess(imageData) {
 function onPhotoURISuccess(imageURI) {
     console.log(imageURI);
 
-    sendImage = imageData;
+    sendImage = imageURI;
 
     var json = document.getElementById('json'); 
 
-    json.innerHTML = imageData;
+    json.innerHTML = imageURI;
 }
 
 function capturePhoto() {
@@ -57,7 +57,11 @@ function onFail(message) {
     alert('Failed because: ' + message);
 }
 
-function sendImageToAPI(sendImage){
+function sendImageToAPI(){
+
+    var json = document.getElementById('json').value; 
+
+    var sendImage = json;
 
     if (sendImage != null)
     {
@@ -67,7 +71,7 @@ function sendImageToAPI(sendImage){
         ip += document.getElementById('fourthOct').value + ':';
         ip += document.getElementById('port').value;
 
-        var request = "http://" + ip + "/image";
+        var request = "http://" + ip + "/image/" + sendImage;
         console.log(request);
 
         console.log(image);
@@ -97,7 +101,4 @@ function sendImageToAPI(sendImage){
 
         json.innerHTML = "No image to send, take a picture or upload one.";
     }
-
-    
-
 }
