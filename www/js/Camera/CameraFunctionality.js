@@ -63,42 +63,24 @@ function sendImageToAPI(){
 
     var sendImage = json;
 
-    if (sendImage != null)
-    {
-        var ip = document.getElementById('firstOct').value + '.';
-        ip += document.getElementById('secondOct').value + '.';
-        ip += document.getElementById('thirdOct').value + '.';
-        ip += document.getElementById('fourthOct').value + ':';
-        ip += document.getElementById('port').value;
+    var ip = document.getElementById('firstOct').value + '.';
+    ip += document.getElementById('secondOct').value + '.';
+    ip += document.getElementById('thirdOct').value + '.';
+    ip += document.getElementById('fourthOct').value + ':';
+    ip += document.getElementById('port').value;
 
-        var request = "http://" + ip + "/image/" + sendImage;
-        console.log(request);
+    var request = "http://" + ip + "/image/" + sendImage;
+    console.log(request);
 
-        console.log(image);
+    console.log(sendImage);
 
-        // var fileInput = document.getElementById('fileInput');
-        console.log(image);
+    // This code sends a GET request via AJAX to API containing the URI of the image that is either
+    // captured or uploaded
+    //
+    var xmlHttp = new XMLHttpRequest();
 
-        // This code sends a GET request via AJAX to API containing the URI of the image that is either
-        // captured or uploaded
-        //
-        var xmlHttp = new XMLHttpRequest();
-
-        xmlHttp.onload = function() {
-            var serverResponse = document.getElementById('json');
-            serverResponse.innerHTML = this.responseText;
-        };
-
-        xmlHttp.open( "GET", request, false ); // false for synchronous request
-        console.log(fileInput);
-        xmlHttp.send(fileInput);
-        console.log(ip);
-
-    }
-    else
-    {
-        var json = document.getElementById('json'); 
-
-        json.innerHTML = "No image to send, take a picture or upload one.";
-    }
+    xmlHttp.open( "GET", request, true ); // false for synchronous request
+    console.log("Opened xhmlHttp");
+    xmlHttp.send();
+    console.log("Sent xhmlHttp");
 }
