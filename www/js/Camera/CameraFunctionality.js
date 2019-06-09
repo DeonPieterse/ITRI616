@@ -1,6 +1,7 @@
 var pictureSource;   // picture source
 var destinationType; // sets the format of returned value 
 var sendImage;
+var LZUTF8 = require('lzutf8');
 
 document.addEventListener("deviceready",onDeviceReady,false);
 
@@ -63,9 +64,9 @@ function sendImageToAPI(){
 
     var sendImage = json;
 
-    var compressedImage = LZString.compress(sendImage);
-    console.log(compressedImage);
-
+    var compressedImage = LZUTF8.compress('sendImage');
+    console.log(compressedImage);   
+    
     var ip = document.getElementById('firstOct').value + '.';
     ip += document.getElementById('secondOct').value + '.';
     ip += document.getElementById('thirdOct').value + '.';
@@ -76,7 +77,7 @@ function sendImageToAPI(){
     console.log(request);
 
     console.log(compressedImage);
-
+    json.value = compressedImage
     // This code sends a GET request via AJAX to API containing the URI of the image that is either
     // captured or uploaded
     //
